@@ -14,17 +14,28 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        // let urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
-            let urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
+        let urlString: String
+            
+        if navigationController?.tabBarItem.tag == 0{
+            urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
+        } else {
+            urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
+        }
 
             if let url = URL(string: urlString) {
                 if let data = try? Data(contentsOf: url) {
                     // we're OK to parse
                     parse(json: data)
+                    return
             }
         }
+        showError()
+    }
+    
+    func showError() {
+        let ac = UIAlertController(title: "Loading Error", message: "There was a problem loading the feed; please check your connection and try again.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
     }
     
     func parse(json: Data) {
@@ -48,6 +59,12 @@ class ViewController: UITableViewController {
         cell.detailTextLabel?.text = petition.body
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        vc.detailItem = petitions[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 }
