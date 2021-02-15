@@ -20,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		F430E12E25D35C5E00EE0C04 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F45F342125DAC88600F754BB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F4CEB24825D20E1700F0975B /* Project7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4CEB24B25D20E1700F0975B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4CEB24D25D20E1700F0975B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +47,7 @@
 		F4CEB23F25D20E1700F0975B = {
 			isa = PBXGroup;
 			children = (
+				F45F342125DAC88600F754BB /* README.md */,
 				F4CEB24A25D20E1700F0975B /* Project7 */,
 				F4CEB24925D20E1700F0975B /* Products */,
 			);
